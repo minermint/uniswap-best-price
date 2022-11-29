@@ -8,7 +8,7 @@ export async function findBestPathExactTokenAToTokenB (tokenA: Token, tokenB: To
 
   const bestTrade = bestTrades.pop()
 
-  return bestTrade
+  return (bestTrade != null)
     ? bestTrade.route.path.map((token) => token.address) ?? []
     : []
 }
@@ -34,7 +34,7 @@ export async function findBestPathTokenAToExactTokenB (tokenA: Token, tokenB: To
 
   const bestTrade = bestTrades.pop()
 
-  return bestTrade
+  return (bestTrade != null)
     ? bestTrade.route.path.map((token) => token.address) ?? []
     : []
 }
