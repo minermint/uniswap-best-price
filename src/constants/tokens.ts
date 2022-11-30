@@ -1,7 +1,8 @@
 import * as Uniswap from '@uniswap/sdk'
 
-// base tokens for finding best price. The more base tokens the more accurate
-// the pricing.
+/** @const base tokens for finding best price. The more base tokens the more
+    accurate the pricing.
+ */
 export const BASES: {
   [chainId in Uniswap.ChainId]?: Array<{ address: string, symbol: string, name: string, decimals: number }>;
 } = {

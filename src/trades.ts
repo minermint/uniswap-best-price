@@ -5,7 +5,19 @@ import { BEST_PRICE_OPTIONS, CHAIN_ID_DEFAULT } from './constants/defaults'
 import { BestPriceOptions } from './types/options'
 import { ethers } from 'ethers'
 
-export const getAllTradingPairs = (
+/**
+ * Gets a list of all pairs based on a pre-determined list of high liquidity
+ * tokens.
+ *
+ * See constants/tokens.ts for list of default tokens.
+ *
+ * @param {Token} fromToken The token in as an instance of Uniswap.Token.
+ * @param {Token} toToken The token out as an instance of Uniswap.Token.
+ * @param {BestPriceOptions} opts One or more options for the best path
+ * calculation. Overrides the default best price options.
+ * @returns An array of possibly tradeable token pairs.
+ */
+const getAllPairs = (
   fromToken: Token,
   toToken: Token,
   opts: BestPriceOptions = {}
@@ -73,6 +85,19 @@ export const getAllTradingPairs = (
     }, [])
 }
 
+/**
+ * Gets a list of the tradeable pairs.
+ *
+ * Pairs without liquidity are filtered out of the list.
+ *
+ * @param {Token} fromToken The token in as an instance of Uniswap.Token.
+ * @param {Token} toToken The token out as an instance of Uniswap.Token.
+ * @param {any} provider A provider object compatible with the EIP-1193
+ * standard.
+ * @param {BestPriceOptions} opts One or more options for the best path
+ * calculation. Overrides the default best price options.
+ * @returns An array of tradeable pairs.
+ */
 export const getTradingPairs = async (
   fromToken: Token,
   toToken: Token,
@@ -80,7 +105,7 @@ export const getTradingPairs = async (
   opts: BestPriceOptions = {}
 ): Promise<Pair[]> => {
   const pairs: Pair[] = []
-  const allPairs: [Token, Token] = getAllTradingPairs(fromToken, toToken, opts)
+  const allPairs: [Token, Token] = getAllPairs(fromToken, toToken, opts)
 
   for (let i = 0; i < allPairs.length; i++) {
     try {
