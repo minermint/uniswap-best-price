@@ -44,6 +44,9 @@
     "eth"
   ],
   "author": "MinerToken.io",
+  "contributors": [
+    "haydenyoung (http://gitlab.com/hyprojects/)"
+  ],
   "license": "GPL-3.0-only",
   "devDependencies": {
     "@types/jest": "^29.2.3",
