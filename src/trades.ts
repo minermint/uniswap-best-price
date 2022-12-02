@@ -26,8 +26,6 @@ const getAllPairs = (
 
   const tokens: any[] = []
 
-  console.log(options.additionalBases)
-
   let bases = options.bases !== undefined ? opts.bases : BASES[options.selectedChainId ?? CHAIN_ID_DEFAULT]
 
   if (options.additionalBases !== undefined) {
