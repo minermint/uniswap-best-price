@@ -1,6 +1,6 @@
 # uniswap-v2-best-path
 
-A module for calculating trading paths via [Uniswap](https://uniswap.org)-based swap contracts with no setup. Works with the [Uniswap version 2 API & SDK](https://docs.uniswap.org/sdk/v3/overview).
+A module for calculating trading paths via [Uniswap](https://uniswap.org)-based swap contracts with no setup. Works with the [Uniswap version 2 API & SDK](https://docs.uniswap.org/sdk/v2/overview).
 
 ## Responsibility for any losses caused
 
