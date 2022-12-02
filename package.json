@@ -10,6 +10,13 @@
     "!/dist/test",
     "!/dist/types/test"
   ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "jest",
+    "format:test": "ts-standard -p tsconfig.eslint.json",
+    "format": "ts-standard -p tsconfig.eslint.json --fix"
+  },
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
@@ -23,13 +30,6 @@
       "types": "./dist/types/wrappers/ethers.d.ts",
       "import": "./dist/wrappers/ethers.js"
     }
-  },
-  "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build",
-    "test": "jest",
-    "format:test": "ts-standard -p tsconfig.eslint.json",
-    "format": "ts-standard -p tsconfig.eslint.json --fix"
   },
   "keywords": [
     "uniswap",
