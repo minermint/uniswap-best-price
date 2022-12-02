@@ -26,7 +26,15 @@ const getAllPairs = (
 
   const tokens: any[] = []
 
-  BASES[options.selectedChainId ?? CHAIN_ID_DEFAULT].forEach((token: any) => {
+  console.log(options.additionalBases)
+
+  let bases = options.bases !== undefined ? opts.bases : BASES[options.selectedChainId ?? CHAIN_ID_DEFAULT]
+
+  if (options.additionalBases !== undefined) {
+    bases = [...bases, ...options.additionalBases]
+  }
+
+  bases.forEach((token: any) => {
     tokens.push(
       new Token(
         options.selectedChainId ?? CHAIN_ID_DEFAULT, // @TODO can we pull this from BASES?

@@ -23,7 +23,7 @@ export { BestPathOptions }
  */
 export async function findBestPathExactTokenAToTokenB (tokenA: Token, tokenB: Token, exactTokenA: any, provider: any, opts: BestPathOptions = {}): Promise<string[]> {
   const bestTrades: Trade[] = await computeExactTokenAToTokenB(tokenA, tokenB, exactTokenA, provider, opts)
-  
+
   const bestTrade = bestTrades.pop()
 
   return (bestTrade != null)

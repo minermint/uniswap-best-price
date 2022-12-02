@@ -1,6 +1,14 @@
 # uniswap-v2-best-path
 
-A module for calculating trading paths via Uniswap-based swap contracts with no setup. Works with the Uniswap version 2 API.
+A module for calculating trading paths via [Uniswap](https://uniswap.org)-based swap contracts with no setup. Works with the [Uniswap version 2 API & SDK](https://docs.uniswap.org/sdk/v3/overview).
+
+## Responsibility for any losses caused
+
+Various factors are at play when calculating a swap between two tokens. Additional issues such as price movement, liquidity and gas fees can affect the eventual swap rate between two tokens. 
+
+Therefore, this module does not promise that the best value swap will be found and there could be losses experienced during usage. It is your responsibility to determine whether the best path has been found before passing the returned path to a Uniswap swap contract. 
+
+You (and/or your users) take full responsibility for the execution of the swap based on the path computed by this module.
 
 ## Installation
 
@@ -125,11 +133,37 @@ The number of intermediary currencies to use when finding the best path. Default
 The number of paths to return.
 Default: 3
 
+**bases**
+The base tokens used for intermediary swaps. This should take the form:
+
+```js
+[{
+  address: 'token address (checksummed)'
+  symbol: 'TOKEN TICKER'
+  name: 'TOKEN NAME'
+  decimals: [0-18] // E.g. WETH would have 18
+}]
+```
+
+This will fully override the default base tokens.
+
+**additionalBases**
+Additional base tokens used for intermediary swaps. These will be appended to the default base tokens (or the above `bases` overrides). This should take the form:
+
+```js
+[{
+  address: 'token address (checksummed)'
+  symbol: 'TOKEN TICKER'
+  name: 'TOKEN NAME'
+  decimals: [0-18] // E.g. WETH would have 18
+}]
+```
+
 To override one or more options, pass them within an object:
 
 ```js
 {
-  chainId: Uniswap.ChainId.MATIC
+  chainId: Uniswap.ChainId.GOERLI
   maxHops: 5,
   maxNumResults: 3
 }
