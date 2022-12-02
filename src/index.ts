@@ -3,6 +3,8 @@ import { getTradingPairs } from './trades.js'
 import { BestPriceOptions } from './types/options.js'
 import { BEST_PRICE_OPTIONS } from './constants/defaults.js'
 
+export { BestPriceOptions }
+
 /**
  * Finds the best price path for exactly the amount of tokenA.
  *
