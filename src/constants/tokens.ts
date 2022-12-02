@@ -1,6 +1,6 @@
 import * as Uniswap from '@uniswap/sdk'
 
-/** @const base tokens for finding best price. The more base tokens the more
+/** @const base tokens for finding best path. The more base tokens the more
     accurate the pricing.
  */
 export const BASES: {

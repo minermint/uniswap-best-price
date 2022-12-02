@@ -1,8 +1,8 @@
 import { Token, Pair, Fetcher } from '@uniswap/sdk'
 import flatMap from 'lodash.flatmap'
 import { BASES } from './constants/tokens.js'
-import { BEST_PRICE_OPTIONS, CHAIN_ID_DEFAULT } from './constants/defaults.js'
-import { BestPriceOptions } from './types/options.js'
+import { BEST_PATH_OPTIONS, CHAIN_ID_DEFAULT } from './constants/defaults.js'
+import { BestPathOptions } from './options.js'
 import { ethers } from 'ethers'
 
 /**
@@ -13,16 +13,16 @@ import { ethers } from 'ethers'
  *
  * @param {Token} fromToken The token in as an instance of Uniswap.Token.
  * @param {Token} toToken The token out as an instance of Uniswap.Token.
- * @param {BestPriceOptions} opts One or more options for the best path
- * calculation. Overrides the default best price options.
+ * @param {BestPathOptions} opts One or more options for the best path
+ * calculation. Overrides the default best path options.
  * @returns An array of possibly tradeable token pairs.
  */
 const getAllPairs = (
   fromToken: Token,
   toToken: Token,
-  opts: BestPriceOptions = {}
+  opts: BestPathOptions = {}
 ): [Token, Token] => {
-  const options: BestPriceOptions = { ...BEST_PRICE_OPTIONS, ...opts }
+  const options: BestPathOptions = { ...BEST_PATH_OPTIONS, ...opts }
 
   const tokens: any[] = []
 
@@ -94,15 +94,15 @@ const getAllPairs = (
  * @param {Token} toToken The token out as an instance of Uniswap.Token.
  * @param {any} provider A provider object compatible with the EIP-1193
  * standard.
- * @param {BestPriceOptions} opts One or more options for the best path
- * calculation. Overrides the default best price options.
+ * @param {BestPathOptions} opts One or more options for the best path
+ * calculation. Overrides the default best path options.
  * @returns An array of tradeable pairs.
  */
 export const getTradingPairs = async (
   fromToken: Token,
   toToken: Token,
   provider: any,
-  opts: BestPriceOptions = {}
+  opts: BestPathOptions = {}
 ): Promise<Pair[]> => {
   const pairs: Pair[] = []
   const allPairs: [Token, Token] = getAllPairs(fromToken, toToken, opts)

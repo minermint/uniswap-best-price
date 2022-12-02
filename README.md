@@ -1,16 +1,16 @@
-# uniswap-best-price
+# uniswap-v2-best-path
 
-A module for calculating trading paths via Uniswap-based swap contracts with no setup.
+A module for calculating trading paths via Uniswap-based swap contracts with no setup. Works with the Uniswap version 2 API.
 
 ## Installation
 
 ```
-npm i @miner/uniswap-best-price
+npm i @miner/uniswap-v2-best-path
 ```
 
 ## Usage
 
-The Uniswap Best Price module provides a simple method for calculating the best swap path between two tokens.
+The Uniswap V2 Best Path module provides a simple method for calculating the best swap path between two tokens.
 
 To calculate the best price path, pass two tokens, the token in and the token out, along with the amount of token in or token out you are expecting to swap.
 

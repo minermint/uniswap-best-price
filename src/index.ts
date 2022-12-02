@@ -1,9 +1,9 @@
 import { Trade, Token, TokenAmount, JSBI } from '@uniswap/sdk'
 import { getTradingPairs } from './trades.js'
-import { BestPriceOptions } from './types/options.js'
-import { BEST_PRICE_OPTIONS } from './constants/defaults.js'
+import { BestPathOptions } from './options.js'
+import { BEST_PATH_OPTIONS } from './constants/defaults.js'
 
-export { BestPriceOptions }
+export { BestPathOptions }
 
 /**
  * Finds the best price path for exactly the amount of tokenA.
@@ -16,12 +16,12 @@ export { BestPriceOptions }
  * string.
  * @param {any} provider A provider object compatible with the EIP-1193
  * standard.
- * @param {BestPriceOptions} opts One or more options for the best path
- * calculation. Overrides the default best price options.
+ * @param {BestPathOptions} opts One or more options for the best path
+ * calculation. Overrides the default best path options.
  * @returns An array of token addresses representing the best price path from
  * tokenIn to tokenOut for the exact amount of tokenIn.
  */
-export async function findBestPathExactTokenAToTokenB (tokenA: Token, tokenB: Token, exactTokenA: any, provider: any, opts: BestPriceOptions = {}): Promise<string[]> {
+export async function findBestPathExactTokenAToTokenB (tokenA: Token, tokenB: Token, exactTokenA: any, provider: any, opts: BestPathOptions = {}): Promise<string[]> {
   const bestTrades: Trade[] = await computeExactTokenAToTokenB(tokenA, tokenB, exactTokenA, provider, opts)
   
   const bestTrade = bestTrades.pop()
@@ -43,14 +43,14 @@ export async function findBestPathExactTokenAToTokenB (tokenA: Token, tokenB: To
  * string.
  * @param {any} provider A provider object compatible with the EIP-1193
  * standard.
- * @param {BestPriceOptions} opts One or more options for the best path
- * calculation. Overrides the default best price options.
+ * @param {BestPathOptions} opts One or more options for the best path
+ * calculation. Overrides the default best path options.
  * @returns A list of one or more best paths, each of which will contain an
  * array of token addresses representing the best price path from tokenB to
  * tokenB for the exact amount of tokenA.
  */
-export async function computeExactTokenAToTokenB (tokenA: Token, tokenB: Token, exactTokenA: any, provider: any, opts: BestPriceOptions = {}): Promise<Trade[]> {
-  const options: BestPriceOptions = { ...BEST_PRICE_OPTIONS, ...opts }
+export async function computeExactTokenAToTokenB (tokenA: Token, tokenB: Token, exactTokenA: any, provider: any, opts: BestPathOptions = {}): Promise<Trade[]> {
+  const options: BestPathOptions = { ...BEST_PATH_OPTIONS, ...opts }
 
   const pairs = await getTradingPairs(tokenA, tokenB, provider, options)
 
@@ -76,12 +76,12 @@ export async function computeExactTokenAToTokenB (tokenA: Token, tokenB: Token, 
  * string.
  * @param {any} provider A provider object compatible with the EIP-1193
  * standard.
- * @param {BestPriceOptions} opts One or more options for the best path
- * calculation. Overrides the default best price options.
+ * @param {BestPathOptions} opts One or more options for the best path
+ * calculation. Overrides the default best path options.
  * @returns An array of token addresses representing the best price path from
  * tokenIn to tokenOut for the exact amount of tokenIn.
  */
-export async function findBestPathTokenAToExactTokenB (tokenA: Token, tokenB: Token, exactTokenB: any, provider: any, opts: BestPriceOptions = {}): Promise<string[]> {
+export async function findBestPathTokenAToExactTokenB (tokenA: Token, tokenB: Token, exactTokenB: any, provider: any, opts: BestPathOptions = {}): Promise<string[]> {
   const bestTrades: Trade[] = await computeTokenAToExactTokenB(tokenA, tokenB, exactTokenB, provider, opts)
 
   const bestTrade = bestTrades.pop()
@@ -103,14 +103,14 @@ export async function findBestPathTokenAToExactTokenB (tokenA: Token, tokenB: To
  * string.
  * @param {any} provider A provider object compatible with the EIP-1193
  * standard.
- * @param {BestPriceOptions} opts One or more options for the best path
- * calculation. Overrides the default best price options.
+ * @param {BestPathOptions} opts One or more options for the best path
+ * calculation. Overrides the default best path options.
  * @returns A list of one or more best paths, each of which will contain an
  * array of token addresses representing the best price path from tokenA to
  * tokenB for the exact amount of tokenB.
  */
-export async function computeTokenAToExactTokenB (tokenA: Token, tokenB: Token, exactTokenB: any, provider: any, opts: BestPriceOptions = {}): Promise<Trade[]> {
-  const options: BestPriceOptions = { ...BEST_PRICE_OPTIONS, ...opts }
+export async function computeTokenAToExactTokenB (tokenA: Token, tokenB: Token, exactTokenB: any, provider: any, opts: BestPathOptions = {}): Promise<Trade[]> {
+  const options: BestPathOptions = { ...BEST_PATH_OPTIONS, ...opts }
 
   const pairs = await getTradingPairs(tokenA, tokenB, provider, options)
 
