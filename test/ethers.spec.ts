@@ -7,7 +7,7 @@ dotenv.config()
 
 jest.setTimeout(60000)
 
-describe('Best Path - Web3', () => {
+describe('Best Path - Ethers', () => {
   let tokenA: Contract, tokenB: Contract
   let provider: any
 
