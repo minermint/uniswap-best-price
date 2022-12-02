@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 import { ethers, Contract } from 'ethers'
 import ArtifactERC20 from '@uniswap/v2-core/build/IERC20.json'
-import { findBestPathExactTokenAToTokenB, findBestPathTokenAToExactTokenB } from '../src/wrappers/ethers'
+import { findBestPathExactTokenAToTokenB, findBestPathTokenAToExactTokenB } from '../src/wrappers/ethers.js'
 
 dotenv.config()
 

@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 import { ethers } from 'ethers'
 import { Token, ChainId } from '@uniswap/sdk'
-import { findBestPathExactTokenAToTokenB, findBestPathTokenAToExactTokenB } from '../src/index'
+import { findBestPathExactTokenAToTokenB, findBestPathTokenAToExactTokenB } from '../src/index.js'
 
 dotenv.config()
 

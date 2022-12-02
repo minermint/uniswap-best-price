@@ -3,7 +3,7 @@ import Web3 from 'web3'
 import { Contract } from 'web3-eth-contract'
 import { AbiItem } from 'web3-utils'
 import ArtifactERC20 from '@uniswap/v2-core/build/IERC20.json'
-import { findBestPathExactTokenAToTokenB, findBestPathTokenAToExactTokenB } from '../src/wrappers/web3'
+import { findBestPathExactTokenAToTokenB, findBestPathTokenAToExactTokenB } from '../src/wrappers/web3.js'
 
 dotenv.config()
 

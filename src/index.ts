@@ -1,7 +1,7 @@
 import { Trade, Token, TokenAmount, JSBI } from '@uniswap/sdk'
-import { getTradingPairs } from './trades'
-import { BestPriceOptions } from './types/options'
-import { BEST_PRICE_OPTIONS } from './constants/defaults'
+import { getTradingPairs } from './trades.js'
+import { BestPriceOptions } from './types/options.js'
+import { BEST_PRICE_OPTIONS } from './constants/defaults.js'
 
 /**
  * Finds the best price path for exactly the amount of tokenA.
@@ -21,7 +21,7 @@ import { BEST_PRICE_OPTIONS } from './constants/defaults'
  */
 export async function findBestPathExactTokenAToTokenB (tokenA: Token, tokenB: Token, exactTokenA: any, provider: any, opts: BestPriceOptions = {}): Promise<string[]> {
   const bestTrades: Trade[] = await computeExactTokenAToTokenB(tokenA, tokenB, exactTokenA, provider, opts)
-
+  
   const bestTrade = bestTrades.pop()
 
   return (bestTrade != null)

@@ -4,9 +4,9 @@
 
 import { Token, Trade } from '@uniswap/sdk'
 import { Contract } from 'ethers'
-import { BestPriceOptions } from '../types/options'
-import * as Base from '../index'
-import { BEST_PRICE_OPTIONS, CHAIN_ID_DEFAULT } from '../constants/defaults'
+import { BestPriceOptions } from '../types/options.js'
+import * as Base from '../index.js'
+import { BEST_PRICE_OPTIONS, CHAIN_ID_DEFAULT } from '../constants/defaults.js'
 
 /**
  * Finds the best price path for exactly the amount of tokenA.

@@ -10,6 +10,20 @@
     "!/dist/test",
     "!/dist/types/test"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./wrappers/web3": {
+      "types": "./dist/types/wrappers/web3.d.ts",
+      "import": "./dist/wrappers/web3.js"
+    },
+    "./wrappers/ethers": {
+      "types": "./dist/types/wrappers/ethers.d.ts",
+      "import": "./dist/wrappers/ethers.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",

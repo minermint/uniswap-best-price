@@ -1,5 +1,5 @@
 import { ChainId } from '@uniswap/sdk'
-import { BestPriceOptions } from '../types/options'
+import { BestPriceOptions } from '../types/options.js'
 
 /** @const The default chain id (Ethereum MainNet).
     @type {number}

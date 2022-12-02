@@ -1,8 +1,8 @@
 import { Token, Pair, Fetcher } from '@uniswap/sdk'
 import flatMap from 'lodash.flatmap'
-import { BASES } from './constants/tokens'
-import { BEST_PRICE_OPTIONS, CHAIN_ID_DEFAULT } from './constants/defaults'
-import { BestPriceOptions } from './types/options'
+import { BASES } from './constants/tokens.js'
+import { BEST_PRICE_OPTIONS, CHAIN_ID_DEFAULT } from './constants/defaults.js'
+import { BestPriceOptions } from './types/options.js'
 import { ethers } from 'ethers'
 
 /**
