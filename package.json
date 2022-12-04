@@ -6,9 +6,7 @@
   "exports": "./dist/src/index.js",
   "types": "./dist/types/src/index.d.ts",
   "files": [
-    "/dist",
-    "!/dist/test",
-    "!/dist/types/test"
+    "/dist"
   ],
   "scripts": {
     "build": "tsc",
