@@ -13,7 +13,7 @@ You (and/or your users) take full responsibility for the execution of the swap b
 ## Installation
 
 ```
-npm i @miner/uniswap-v2-best-path
+npm i @minertoken/uniswap-v2-best-path
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ To calculate the best price path, pass two tokens, the token in and the token ou
 Start by importing the module:
 
 ```
-import * as BestPath from '@miner/uniswap-v2-best-path'
+import * as BestPath from '@minertoken/uniswap-v2-best-path'
 ```
 
 There are various ways to specify the tokenA and tokenB details. The native Best Path functions accept instances of the Uniswap.Token class, so you will need the `@uniswap/sdk` module installed:
@@ -178,7 +178,7 @@ To use a wrapper, include it instead of the native functions.
 To use web3:
 
 ```js
-import * as Web3BestPath from '@miner/uniswap-v2-best-path/wrappers/web3'
+import * as Web3BestPath from '@minertoken/uniswap-v2-best-path/wrappers/web3'
 ...
 const path = Web3BestPath.computeExactTokenAToTokenB(tokenA, tokenB, '1000000000000000000', provider)
 ```
@@ -186,7 +186,7 @@ const path = Web3BestPath.computeExactTokenAToTokenB(tokenA, tokenB, '1000000000
 To use ethers: 
 
 ```js
-import * as EthersBestPath from '@miner/uniswap-v2-best-path/wrappers/ethers'
+import * as EthersBestPath from '@minertoken/uniswap-v2-best-path/wrappers/ethers'
 ...
 const path = EthersBestPath.computeExactTokenAToTokenB(tokenA, tokenB, '1000000000000000000', provider)
 ```
