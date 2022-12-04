@@ -2,7 +2,7 @@
 
 A module for calculating trading paths via [Uniswap](https://uniswap.org)-based swap contracts with no setup. Works with the [Uniswap version 2 API & SDK](https://docs.uniswap.org/sdk/v2/overview).
 
-## Responsibility for any losses caused
+## Managing price discrepancies and minimizing loss
 
 Various factors are at play when calculating a swap between two tokens. Additional issues such as price movement, liquidity and gas fees can affect the eventual swap rate between two tokens. 
 
