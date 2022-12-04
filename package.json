@@ -1,5 +1,5 @@
 {
-  "name": "@miner/uniswap-v2-best-path",
+  "name": "@minertoken/uniswap-v2-best-path",
   "version": "0.0.0",
   "description": "The Uniswap Best Path module finds the best exchange rate between two tokens and returns the corresponding path of tokens that is required to complete a token",
   "type": "module",
