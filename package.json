@@ -1,6 +1,6 @@
 {
   "name": "@minertoken/uniswap-v2-best-path",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Uniswap Best Path module finds the best exchange rate between two tokens and returns the corresponding route of tokens necessary to complete the swap.",
   "type": "module",
   "main": "./dist/index.js",
