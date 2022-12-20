@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "The Uniswap Best Path module finds the best exchange rate between two tokens and returns the corresponding route of tokens necessary to complete the swap.",
   "type": "module",
+  "main": "./dist/index.js",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
